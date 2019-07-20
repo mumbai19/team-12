@@ -1,8 +1,48 @@
 @extends('experts.dashboard.Nav1')
 
 @section('content')
+<script src="https://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js"></script>
+  <!-- Essential JS UI widget -->
+  <script src="https://cdn.syncfusion.com/17.2.0.28/js/web/ej.web.all.min.js"></script>
 <script>
+var chartData = [
+      { month: 'Jan', sales: 35 },
+      { month: 'Feb', sales: 28 },
+      { month: 'Mar', sales: 34 },
+      { month: 'Apr', sales: 32 },
+      { month: 'May', sales: 40 },
+      { month: 'Jun', sales: 32 },
+      { month: 'Jul', sales: 35 },
+      { month: 'Aug', sales: 55 },
+      { month: 'Sep', sales: 38 },
+      { month: 'Oct', sales: 30 },
+      { month: 'Nov', sales: 25 },
+      { month: 'Dec', sales: 32 }];
+
+
+
         $(document).ready(function(){
+
+                $("#container").ejChart({
+
+                series: [{
+                        dataSource: chartData, 
+                        xName: "month", 
+                        yName: "sales",
+                        type: 'line',
+                        name: "Fish Sales Graph",
+                        tooltip: {visible: true},
+                        text: 'Sales Report Monthwise',
+                        primaryYAxis:{
+                        labelFormat: '${value}K'
+                                },
+                        marker: {
+                        legend: {
+                                visible: true,
+                                }
+                        }
+                        }],
+                        });
            $('#pASubmit').click(function(){
                 var advice = $('#data').val();
                 var comment = $('#comment').val();
@@ -62,6 +102,7 @@
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
             </script>
 </div>
+<div id="container" style=" height: 500px;"></div>
 <div class="row" style="margin-bottom:20px">
         <div class="col-12">
         <div class="card card-primary card-outline">
