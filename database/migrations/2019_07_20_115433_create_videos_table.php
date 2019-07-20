@@ -19,8 +19,7 @@ class CreateVideosTable extends Migration
             $table->string('tags');
             $table->integer('expert_id')->unsigned();
             $table->foreign('expert_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('language');
-            $table->string('text')->nullable();
+            $table->string('language')->nullable();
 
             $table->timestamps();
         });

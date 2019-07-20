@@ -2,7 +2,9 @@
 @section('page')
     
 {{-- @endsection('page') --}}
-<head><meta name="csrf-token" content="{{ csrf_token() }}"></head>
+<head><meta name="csrf-token" content="{{ csrf_token() }}">
+  
+</head>
   <body>
     <!-- Side Navbar -->
     <nav class="side-navbar">

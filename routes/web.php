@@ -43,9 +43,14 @@ Route::group(['prefix'=>'farmer'], function() {
 
 } );
 
-Route::get('/expert', function(){
-    return view('experts.expert');
-});
+Route::get('/expert', 'expertsController@readData');
+
+Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
+Route::get('/uploadVideo', 'expertsController@addVideos');
+Route::get('/addAdvice', 'expertsController@addAdvice');
+
+
+
 Route::get('/login', function(){
     return view('login');
 });
