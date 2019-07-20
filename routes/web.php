@@ -47,6 +47,28 @@ Route::group(['prefix'=>'farmer'], function() {
 
 } );
 
+Route::group(['prefix'=>'community'], function() {
+    Route::get('/', function(){
+        $request = request();
+        if($request->has('filter_query')){
+            $not_verified = \App\User::where('name','LIKE','%'.$request->filter_query.'%')
+                            ->where('is_verified', 0)
+                            ->where('role', $request->has('role'))->get();
+            return view('community_member.verification', ['not_verified' => $not_verified]);
+        }
+        $not_verified = \App\User::where('is_verified', 0)->get();
+        return view('community_member.verification', ['not_verified' => $not_verified]);
+    });
+
+    Route::get('/verify/{id}', function($id) {
+        $request = request();
+        $user = \App\User::find($id);
+        $user->is_verified = 1;
+        $user->save();
+        return redirect('community/');
+    });
+});
+
 Route::get('/expert', 'expertsController@readData');
 
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
