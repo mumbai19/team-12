@@ -79,7 +79,8 @@ Route::get('/addAdvice', 'expertsController@addAdvice');
 
 Route::get('/login', function(){
     return view('login');
-});
+})->name('login');
+
 
 Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 
@@ -129,11 +130,11 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 
 });
 
-Route::get('/products/vendor', function () {
+Route::get('/vendor/products', function () {
     return view('farmer.pages.sale');
 });
 
-Route::post('/products/vendor', function () {
+Route::post('/vendor/products', function () {
 
 
     $request = request();
@@ -150,11 +151,11 @@ Route::post('/products/vendor', function () {
     return view('farmer.pages.sale');
 });
 
-Route::get('/products/farmer', function() {
+Route::get('/farmer/products', function() {
     return view('farmer.pages.sale');
 });
 
-Route::post('/products/farmer', function () {
+Route::post('/farmer/products', function () {
     $request = request();
 
     $product = new \App\FarmerProduct();
@@ -170,7 +171,7 @@ Route::post('/products/farmer', function () {
 });
 
 
-Route::group(['prefix'=>'vendor1', 'middleware' => 'admin'], function() {
+Route::group(['prefix'=>'vendors', 'middleware' => 'admin'], function() {
 
     Route::get('/', 'FishController@sendAddr')->name("v_home");
     Route::get('/intr', 'FishController@intr')->name("v_intr");
