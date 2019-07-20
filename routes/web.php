@@ -99,6 +99,10 @@ Route::get('/products/vendor', function () {
 Route::get('/vendor/products', function () {
     return view('farmer.pages.sale');
 });
+
+Route::get('/farmer/form', function () {
+    return view('farmer.pages.sale');
+});
 Route::post('/vendor/products', function () {
     $request = request();
     $product = new \App\Product();
@@ -110,9 +114,9 @@ Route::post('/vendor/products', function () {
     $product->save();
     return view('farmer.pages.sale');
 });
-Route::get('/farmer/products', function() {
+/* Route::get('/farmer/products', function() {
     return view('farmer.pages.sale');
-});
+}); */
 Route::post('/farmer/products', function () {
     $request = request();
     $product = new \App\FarmerProduct();
