@@ -14,7 +14,7 @@ class CreateEnterpreneurInterestTable extends Migration
     public function up()
     {
         Schema::create('entrepreneur_interest', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('farmer_product_id')->unsigned();
             $table->foreign('farmer_product_id')->references('id')->on('farmer_products')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('entrepreneur_id')->unsigned();

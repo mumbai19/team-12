@@ -14,7 +14,7 @@ class CreateFarmerProductsTable extends Migration
     public function up()
     {
         Schema::create('farmer_products', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('fishname');
             $table->string('tags');
             $table->integer('farmer_id')->unsigned();

@@ -14,7 +14,7 @@ class CreateVendorInterestTable extends Migration
     public function up()
     {
         Schema::create('vendor_interest', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('farmer_id')->unsigned();

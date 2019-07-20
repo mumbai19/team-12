@@ -14,7 +14,7 @@ class CreatePersonalisedAdviceTable extends Migration
     public function up()
     {
         Schema::create('personalised_advice', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('expert_id')->unsigned();
             $table->foreign('expert_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('farmer_id')->unsigned();
