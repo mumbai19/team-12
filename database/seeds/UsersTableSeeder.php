@@ -12,12 +12,14 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Admin Admin',
-            'email' => 'admin@argon.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('secret'),
-            'created_at' => now(),
-            'updated_at' => now()
+        "name" => "Raj Parekh",
+        "email" => "raj.parekh07@gmail.com",
+        "contact" => "8879170527",
+        "address" => "abc",
+        "pincode" => "400067",
+        "is_verified" => "1",
+        "role" => "1",
+        "password" => bcrypt("secret")
         ]);
     }
 }

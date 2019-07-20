@@ -33,7 +33,43 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+//    protected $casts = [
+//        'email_verified_at' => 'datetime',
+//    ];
+
+    public function products()
+    {
+        return $this->hasMany("App\Product", "vendor_id");
+    }
+
+    public function videos()
+    {
+        return $this->hasMany("App\Video","expert_id");
+    }
+
+    public function farmer_products()
+    {
+        return $this->hasMany("App\FarmerProduct", "farmer_id");
+    }
+
+    public function personalised_advices_given()
+    {
+        return $this->hasMany("App\PersonalisedAdvice", "expert_id");
+    }
+
+    public function personalised_advices_taken()
+    {
+        return $this->hasMany("App\PersonalisedAdvice", "farmer_id");
+    }
+
+    public function vendor_interests()
+    {
+        return $this->hasMany("App\VendorInterest","vendor_id");
+    }
+
+    public function entrepreneur_interests()
+    {
+        return $this->hasMany("App\EntrepreneurInterest", "entrepreneur_id");
+    }
+
 }
