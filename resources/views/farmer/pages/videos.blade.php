@@ -24,23 +24,22 @@
     </div>  
 
     <div class="row">
-        <div class="row col-12">
-        </div>
+
         <!--add for loop here-->
         <div class="col-lg-4 col-sm-12">
-            <iframe height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            <iframe  height="200" width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe>
         </div>
         <div class="col-lg-4 col-sm-12">
-            <iframe height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe>
         </div>
         <div class="col-lg-4 col-sm-12">
-                <iframe height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 </iframe>
         </div>
         <div class="col-lg-4 col-sm-12">
-            <iframe height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe>
         </div>
         
