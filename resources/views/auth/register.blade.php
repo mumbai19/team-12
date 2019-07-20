@@ -61,6 +61,63 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="pincode" class="col-md-4 col-form-label text-md-right">{{ __('Pincode') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="pincode" type="number" class="form-control{{ $errors->has('pincode') ? ' is-invalid' : '' }}" name="pincode" required value="{{ old('pincode') }}">
+
+                                @if ($errors->has('pincode'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('pincode') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label  class="col-md-4 col-form-label text-md-right">Address</label>
+
+                            <div class="col-md-6">
+                                <input name="address" class="form-control"  required value="{{ old('address') }}">
+                            </div>
+
+                            @if ($errors->has('address'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group row">
+                            <label  class="col-md-4 col-form-label text-md-right">Contact Number</label>
+
+                            <div class="col-md-6">
+                                <input name="contact" class="form-control"  required value="{{ old('contact') }}">
+                            </div>
+
+                            @if ($errors->has('contact'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('contact') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group row">
+                            <label  class="col-md-4 col-form-label text-md-right">Category</label>
+
+                            <select class="col-md-6" name="role" id="inlineFormCustomSelect">
+                             <option selected>Choose...</option>
+                             <option value="1">Farmer</option>
+                             <option value="2">Expert</option>
+                              <option value="3">Entrepreneur</option>
+                              <option value="4">Vendor</option>
+                              <option value="5">Community Member</option>
+                          </select>
+
+
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
