@@ -32,14 +32,31 @@ Route::group(['prefix'=>'farmer'], function() {
     });
 
     Route::get('/videos', function () {
-        return view('farmer.pages.videos');
+
+        $request = request();
+
+        if ($request->has('filter_query')) {
+            $videos = \App\Video::where('tags', 'LIKE', '%'.$request->filter_query. '%')->orWhere('language', 'LIKE', '%'.$request->filter_query.'%')->get();
+
+            return view('farmer.pages.videos', ['videos' => $videos]);
+        }
+
+        return view('farmer.pages.videos', ['videos' => \App\Video::all()]);
     })->name("farmer_view_videos");
 
 
 } );
 
-Route::get('/expert', function(){
-    return view('experts.expert');
+Route::get('/expert', 'expertsController@readData');
+
+Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
+Route::get('/uploadVideo', 'expertsController@addVideos');
+Route::get('/addAdvice', 'expertsController@addAdvice');
+
+
+
+Route::get('/login', function(){
+    return view('login');
 });
 
 Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
