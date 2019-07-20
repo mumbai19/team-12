@@ -28,7 +28,16 @@ Route::group(['prefix'=>'farmer'], function() {
     });
 
     Route::get('/videos', function () {
-        return view('farmer.pages.videos');
+
+        $request = request();
+
+        if ($request->has('filter_query')) {
+            $videos = \App\Video::where('tags', 'LIKE', '%'.$request->filter_query. '%')->orWhere('language', 'LIKE', '%'.$request->filter_query.'%')->get();
+
+            return view('farmer.pages.videos', ['videos' => $videos]);
+        }
+
+        return view('farmer.pages.videos', ['videos' => \App\Video::all()]);
     })->name("farmer_view_videos");
 
 
