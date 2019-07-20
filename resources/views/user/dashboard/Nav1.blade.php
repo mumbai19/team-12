@@ -24,9 +24,18 @@
             
               <li  class="@if(Route::is('u_home'))  active @endif"><a href="/user" class="scroll"> <i class="icon-home"></i>Home                             </a></li>
               {{-- <li id=pk class="@if(Route::is('profile'))  active @endif"><a href="#" class="scroll"> <i class="icon-form"></i>Profile                            </a></li> --}}
-          
+              <li  class="@if(Route::is('dash'))  active @endif"><a href="/dashboard" class="scroll"> <i class="icon-home"></i>Dashboard                            </a></li>
               <li  class="@if(Route::is('u_cal')) active @endif"><a href="/user/calendar"> <i class="fa fa-bar-chart"></i>View Calendar                            </a></li>                 
             
+              <li class="@if(Route::is('forms')) active @endif"><a href="/user/charts" ><i class="fa fa-bar-chart"></i>Charts</a></li>
+
+              <li class="@if(Route::is('forms')) active @endif"><a href="/user/forms" > <i class="icon-form"></i>Forms</a></li>
+
+              <li class="@if(Route::is('tables')) active @endif"><a href="/user/tables" > <i class="icon-grid"></i>Tables</a></li>
+
+              <li class="@if(Route::is('register')) active @endif"><a href="/user/register" > <i class="icon-screen"></i>Register</a></li>
+
+
             
            
             {{-- <li class="@if(Route::is('health')) active @endif"><a id="chart" href="#"> <i class="icon-grid"></i>Health                             </a></li> --}}

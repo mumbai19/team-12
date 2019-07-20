@@ -39,9 +39,25 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
             return view('user.pages.calendar');
          })->name("u_cal");
 
+    Route::get('/forms', function () {
+            return view('user.pages.forms');
+         })->name("forms");
+    
+    Route::get('/dashboard', function () {
+            return view('user.pages.forms');
+         })->name("dash");
+
+    Route::get('/tables', function () {
+            return view('user.pages.tables');
+         })->name("tables");
+
+    Route::get('/charts', function () {
+            return view('user.pages.charts');
+         })->name("charts");
+
     Route::get('/schedule','ManagerController@plList' )->name("m_schedule");
 
-    
+        
     Route::get("/create&d_id={d_id}", function () {
         return view('user.pages.createSch');
         })->name("m_schedule");

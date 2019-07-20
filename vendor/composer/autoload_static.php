@@ -127,8 +127,8 @@ class ComposerStaticInit667af5eac6bbcd7c342132100412e550
         'C' => 
         array (
             'Cron\\' => 5,
-            'Collective\\Html\\' => 16,
             'Composer\\CaBundle\\' => 18,
+            'Collective\\Html\\' => 16,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -344,13 +344,13 @@ class ComposerStaticInit667af5eac6bbcd7c342132100412e550
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
-        'Collective\\Html\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
-        ),
         'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
         ),
         'Carbon\\' => 
         array (
@@ -409,8 +409,6 @@ class ComposerStaticInit667af5eac6bbcd7c342132100412e550
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ManagerController' => __DIR__ . '/../..' . '/app/Http/Controllers/ManagerController.php',
-        'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
-        'App\\Http\\Controllers\\SessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SessionController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\AdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminMiddleware.php',
@@ -431,9 +429,6 @@ class ComposerStaticInit667af5eac6bbcd7c342132100412e550
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\driver' => __DIR__ . '/../..' . '/app/driver.php',
-        'App\\manager' => __DIR__ . '/../..' . '/app/manager.php',
-        'App\\sesion' => __DIR__ . '/../..' . '/app/sesion.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
