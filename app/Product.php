@@ -10,6 +10,6 @@ class Product extends Model
 
     public function vendor()
     {
-        return $this->belongsTo('User', 'vendor_id');
+        return $this->belongsTo('App\User', 'vendor_id');
     }
 }

@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('tags');
             $table->integer('vendor_id')->unsigned();
             $table->foreign('vendor_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('text');
             $table->string('cost');
 
             $table->timestamps();

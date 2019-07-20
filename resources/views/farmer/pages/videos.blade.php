@@ -22,17 +22,28 @@
           </div>
         </div>
     </div>  
-        <table class="table table-hover table-striped">
-                <tbody>
-                <!--add laravel for loop here for all the videos-->
-                <tr>
-                  <td>
-                  <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"></iframe>
-                  </td>
-                </tr>
 
-                </tbody>
-        </table>
+    <div class="row">
+
+        <!--add for loop here-->
+        <div class="col-lg-4 col-sm-12">
+            <iframe  height="200" width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+            <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+                <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+            <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+        
+</div>
     </div>
     
   </section>

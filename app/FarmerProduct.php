@@ -10,6 +10,6 @@ class FarmerProduct extends Model
 
     public function farmer()
     {
-        return $this->belongsTo('User', 'farmer_id');
+        return $this->belongsTo('App\User', 'farmer_id');
     }
 }

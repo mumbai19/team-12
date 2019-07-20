@@ -10,6 +10,6 @@ class Video extends Model
 
     public function expert_user()
     {
-        return $this->belongsTo('User', 'expert_id');
+        return $this->belongsTo('App\User', 'expert_id');
     }
 }

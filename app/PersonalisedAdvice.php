@@ -10,11 +10,11 @@ class PersonalisedAdvice extends Model
 
     public function expert_user()
     {
-        return $this->belongsTo('User', 'expert_id');
+        return $this->belongsTo('App\User', 'expert_id');
     }
 
     public function farmer()
     {
-        return $this->belongsTo('User', 'farmer_id');
+        return $this->belongsTo('App\User', 'farmer_id');
     }
 }
