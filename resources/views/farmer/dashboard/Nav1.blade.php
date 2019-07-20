@@ -22,12 +22,13 @@
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled active"> 
             
-              <li  class="@if(Route::is('u_home'))  active @endif"><a href="/user" class="scroll"> <i class="icon-home"></i>Home                             </a></li>
+              <li  class="@if(Route::is('f_home'))  active @endif"><a href="/farmer" class="scroll"> <i class="icon-home"></i>Home                             </a></li>
               {{-- <li id=pk class="@if(Route::is('profile'))  active @endif"><a href="#" class="scroll"> <i class="icon-form"></i>Profile                            </a></li> --}}
           
-              <li  class="@if(Route::is('u_cal')) active @endif"><a href="/user/calendar"> <i class="fa fa-bar-chart"></i>View Calendar                            </a></li>                 
-            
-            
+              <li  class="@if(Route::is('f_nbv'))  active @endif"><a href="/farmer/nbv" class="scroll"> <i class="icon-home"></i>Nearby Vendors                            </a></li>
+              
+              <li  class="@if(Route::is('f_intr'))  active @endif"><a href="/farmer/intr" class="scroll"> <i class="icon-home"></i>Interested Enrtreprenuers                          </a></li>
+              
            
             {{-- <li class="@if(Route::is('health')) active @endif"><a id="chart" href="#"> <i class="icon-grid"></i>Health                             </a></li> --}}
             

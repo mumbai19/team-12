@@ -22,15 +22,14 @@
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled active"> 
             
-              <li  class="@if(Route::is('e_home'))  active @endif"><a href="/entrep/" class="scroll"> <i class="icon-home"></i>Nearby Farmers                           </a></li>
+              <li  class="@if(Route::is('e_nbv'))  active @endif"><a href="/entrep/" class="scroll"> <i class="icon-home"></i>Nearby Farmers                           </a></li>
               
 
             
            
             {{-- <li class="@if(Route::is('health')) active @endif"><a id="chart" href="#"> <i class="icon-grid"></i>Health                             </a></li> --}}
             
-            <li class="@if(Route::is('e_intr')) active @endif"><a href="/entrep/intr"> <i class="icon-interface-windows"></i>Interested                             </a></li>
-            
+           
           </ul>
         </div>
         

@@ -24,12 +24,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'farmer'], function() {
 
     Route::get('/', function(){
-        return view('farmer.pages.home');
+        return view('farmer.pages.home')->name('f_home');
     });
 
     Route::get('/videos', function () {
         return view('farmer.pages.videos');
     })->name("farmer_view_videos");
+
+    Route::get('/nbv', 'FishController@sendAddr')->name("f_nbv");
+    Route::get('/ntr', 'FishController@intr');
 
 
 } );
@@ -88,9 +91,10 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 
 
 });
-
+Route::get('/vendors/intr', 'FishController@list')->name('v_intr');
+Route::get('/farmers/intr', 'FishController@flist')->name('f_intr');
 Route::get('/products/vendor', function () {
-    return view('farmer.pages.sale');
+    return view('vendor1.pages.sale');
 });
 
 Route::post('/products/vendor', function () {
@@ -142,6 +146,6 @@ Route::group(['prefix'=>'vendor1', 'middleware' => 'admin'], function() {
 
 Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {
 
-    Route::get('/', 'FishController@sendAddr')->name("v_home");
-    Route::get('/intr', 'FishController@intr')->name("v_intr");    
+    Route::get('/', 'FishController@elist')->name("ve_nbv");
+    //Route::get('/intr', 'FishController@intr')->name("v_intr");    
 });

@@ -22,7 +22,7 @@
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled active"> 
             
-              <li  class="@if(Route::is('v_home'))  active @endif"><a href="/vendor1/" class="scroll"> <i class="icon-home"></i>Nearby Vendors                            </a></li>
+              <li  class="@if(Route::is('v_home'))  active @endif"><a href="/vendor1/intr" class="scroll"> <i class="icon-home"></i>Nearby Vendors                            </a></li>
               
 
             
