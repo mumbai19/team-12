@@ -31,7 +31,7 @@
            
             {{-- <li class="@if(Route::is('health')) active @endif"><a id="chart" href="#"> <i class="icon-grid"></i>Health                             </a></li> --}}
             
-            <li><a href="#"> <i class="icon-interface-windows"></i>Give Advice                             </a></li>
+            <li><a data-toggle="modal" data-target="#advice"> <i class="icon-interface-windows"></i>Give Advice                             </a></li>
             
           </ul>
         </div>
