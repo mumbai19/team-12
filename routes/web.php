@@ -71,3 +71,19 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
          
 });
 
+
+Route::group(['prefix'=>'vendor1', 'middleware' => 'admin'], function() {
+
+    Route::get('/', 'FishController@sendAddr')->name("v_home");
+    Route::get('/intr', 'FishController@intr')->name("v_intr");
+    
+
+         
+         
+});
+
+Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {
+
+    Route::get('/', 'FishController@sendAddr')->name("v_home");
+    Route::get('/intr', 'FishController@intr')->name("v_intr");    
+});
