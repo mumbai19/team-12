@@ -21,6 +21,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['prefix'=>'farmer'], function() {
+
+    Route::get('/', function(){
+        return view('farmer.pages.home');
+    });
+
+    Route::get('/videos', function () {
+        return view('farmer.pages.videos');
+    })->name("farmer_view_videos");
+
+    Route::get('/sale_post', function() {
+        return view('farmer.pages.sale');
+    });
+} );
 
 Route::get('/expert', function(){
     return view('experts.expert');
