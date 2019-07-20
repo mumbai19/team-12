@@ -22,7 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
+Route::get('/expert', function(){
+    return view('experts.expert');
+});
+Route::get('/login', function(){
+    return view('login');
+});
 
 Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 
