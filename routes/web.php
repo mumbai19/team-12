@@ -15,6 +15,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function(){
+    return view('login');
+});
+
 
 
 Auth::routes();
@@ -37,16 +41,13 @@ Route::group(['prefix'=>'farmer'], function() {
 Route::get('/expert', function(){
     return view('experts.expert');
 });
-Route::get('/login', function(){
-    return view('login');
-});
 
 Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 
     Route::get('/', function () {
             return view('user.pages.home');
          })->name("u_home");
-    
+
     Route::get('/calendar', function () {
             return view('user.pages.calendar');
          })->name("u_cal");
@@ -54,7 +55,7 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
     Route::get('/forms', function () {
             return view('user.pages.forms');
          })->name("forms");
-    
+
     Route::get('/dashboard', function () {
             return view('user.pages.forms');
          })->name("dash");
@@ -69,11 +70,11 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 
     Route::get('/schedule','ManagerController@plList' )->name("m_schedule");
 
-        
+
     Route::get("/create&d_id={d_id}", function () {
         return view('user.pages.createSch');
         })->name("m_schedule");
-    
+
     Route::get("/monitor&d_id={d_id}", function () {
         return view('user.pages.monitor');
         })->name("m_schedule");
@@ -134,14 +135,14 @@ Route::group(['prefix'=>'vendor1', 'middleware' => 'admin'], function() {
 
     Route::get('/', 'FishController@sendAddr')->name("v_home");
     Route::get('/intr', 'FishController@intr')->name("v_intr");
-    
 
-         
-         
+
+
+
 });
 
 Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {
 
     Route::get('/', 'FishController@sendAddr')->name("v_home");
-    Route::get('/intr', 'FishController@intr')->name("v_intr");    
+    Route::get('/intr', 'FishController@intr')->name("v_intr");
 });
