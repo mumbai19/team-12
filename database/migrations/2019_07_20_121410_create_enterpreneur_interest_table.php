@@ -15,8 +15,8 @@ class CreateEnterpreneurInterestTable extends Migration
     {
         Schema::create('entrepreneur_interest', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('farmer_product_id')->unsigned();
-            $table->foreign('farmer_product_id')->references('id')->on('farmer_products')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('farmer_id')->unsigned();
+            $table->foreign('farmer_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('entrepreneur_id')->unsigned();
             $table->foreign('entrepreneur_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

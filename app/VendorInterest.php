@@ -13,7 +13,7 @@ class VendorInterest extends Model
         return $this->belongsTo('User', 'vendor_id');
     }
 
-    public function product() {
-        return $this->belongsTo('Product', 'product_id');
+    public function farmer() {
+        return $this->belongsTo('Product', 'farmer_id');
     }
 }

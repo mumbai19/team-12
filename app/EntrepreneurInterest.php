@@ -13,7 +13,7 @@ class EntrepreneurInterest extends Model
         return $this->belongsTo('App\User', 'entrepreneur_id');
     }
 
-    public function farmer_product() {
-        return $this->belongsTo('App\FarmerProduct', 'farmer_product_id');
+    public function farmer() {
+        return $this->belongsTo('App\User', 'farmer_id');
     }
 }
