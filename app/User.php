@@ -36,4 +36,40 @@ class User extends Authenticatable
 //    protected $casts = [
 //        'email_verified_at' => 'datetime',
 //    ];
+
+    public function products()
+    {
+        return $this->hasMany("App\Product", "vendor_id");
+    }
+
+    public function videos()
+    {
+        return $this->hasMany("Video","expert_id");
+    }
+
+    public function farmer_products()
+    {
+        return $this->hasMany("FarmerProduct", "farmer_id");
+    }
+
+    public function personalised_advices_given()
+    {
+        return $this->hasMany("PersonalisedAdvice", "expert_id");
+    }
+
+    public function personalised_advices_taken()
+    {
+        return $this->hasMany("PersonalisedAdvice", "farmer_id");
+    }
+
+    public function vendor_interests()
+    {
+        return $this->hasMany("VendorInterest","vendor_id");
+    }
+
+    public function entrepreneur_interests()
+    {
+        return $this->hasMany("EntrepreneurInterest", "entrepreneur_id");
+    }
+
 }
