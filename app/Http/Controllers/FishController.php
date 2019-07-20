@@ -34,10 +34,10 @@ class FishController extends Controller
         if(!empty($res11)){
          $loc=DB::select("SELECT u.id,u.name,u.contact,u.address,p.name as name1,p.cost from users as u
         Inner join products as p on p.vendor_id=u.id
-        where role='VENDOR' and u.id not in ($a) and pincode =$pp
+        where role='4' and u.id not in ($a) and pincode =$pp
         order BY  u.id");
         $int=DB::select("SELECT u.id,u.name,u.contact,u.address,p.name as name1,p.cost from users as u INNER join products as p on p.vendor_id=u.id
-        where role='VENDOR' and u.id  in ($a) and pincode =$pp
+        where role='4' and u.id  in ($a) and pincode =$pp
         order BY u.id");
                 #return view('farmer.pages.nbv')->with('asc',$loc)->with('int',$int);
 
@@ -45,7 +45,7 @@ class FishController extends Controller
         else{
             $loc=DB::select("SELECT u.id,u.name,u.contact,u.address,p.name as name1,p.cost from users  u
             Inner join products  p on p.vendor_id=u.id
-        where role='VENDOR' and pincode =$pp
+        where role='4' and pincode =$pp
         order BY id");
         $int=array();
         #return view('farmer.pages.nbv')->with('asc',$loc)->with('int',$int);
@@ -120,10 +120,10 @@ class FishController extends Controller
         if(!empty($res11)){
          $loc=DB::select("SELECT u.id,u.name,u.contact,u.address,p.name as name1,p.cost from users as u
         Inner join farmer_products as p on p.farmer_id=u.id
-        where role='VENDOR' and u.id not in ($a) and pincode =$pp
+        where role='1' and u.id not in ($a) and pincode =$pp
         order BY  u.id");
         $int=DB::select("SELECT u.id,u.name,u.contact,u.address,p.name as name1,p.cost from users as u INNER join products as p on p.farmer_id=u.id
-        where role='VENDOR' and u.id  in ($a) and pincode =$pp
+        where role='1' and u.id  in ($a) and pincode =$pp
         order BY u.id");
                 #return view('farmer.pages.nbv')->with('asc',$loc)->with('int',$int);
 
@@ -131,7 +131,7 @@ class FishController extends Controller
         else{
             $loc=DB::select("SELECT u.id,u.name,u.contact,u.address,p.name as name1,p.cost from users  u
             Inner join products  p on p.farmer_id=u.id
-        where role='VENDOR' and pincode =$pp
+        where role='1' and pincode =$pp
         order BY id");
         $int=array();
         #return view('farmer.pages.nbv')->with('asc',$loc)->with('int',$int);
