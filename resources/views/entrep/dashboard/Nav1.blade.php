@@ -15,11 +15,11 @@
             <div class="sidenav-header d-flex align-items-center justify-content-center">
                 <!-- User Info-->
                 <div class="sidenav-header-inner text-center">
-                    <h2 class="h5" style=" text-transform:none;">{{ Auth::user()->name }}</h2>
+                    <h2 class="h5" style=" text-transform:none;">{{ auth()->user()->name }}</h2>
                     {{-- {{ Auth::user()->name }} --}}
                 </div>
                 <!-- Small Brand information, appears on minimized sidebar-->
-                <div class="sidenav-header-logo jersey"><a href="#" class="brand-small text-center"><b>{{ Auth::user()->name[0] }}</b></a></div>
+                <div class="sidenav-header-logo jersey"><a href="#" class="brand-small text-center"><b>{{ auth()->user()->name[0] }}</b></a></div>
             </div>
             <!-- Sidebar Navigation Menus-->
             <div class="main-menu">

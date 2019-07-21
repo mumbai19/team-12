@@ -37,7 +37,7 @@ class UploadFileController extends Controller {
       $csv = array_map('str_getcsv', file($file->getRealPath()));
       //dd($csv);
       //dd($csv[0][0]);
-      $this->importCsv($csv);
+      return $this->importCsv($csv);
    }
 
    public function importCsv($customerArr)
@@ -54,11 +54,11 @@ class UploadFileController extends Controller {
             $user->pincode = $customerArr[$i][4];
             $user->is_verified = $customerArr[$i][5];
             $user->role = $customerArr[$i][6];
-            $user->password = $customerArr[$i][7];
+            $user->password = bcrypt($customerArr[$i][7]);
             $user->save();
         }
 
-        return 'Jobi done or what ever';    
+        return redirect('/community');
     }
 
 }

@@ -26,7 +26,7 @@
           <ul id="side-main-menu" class="side-menu list-unstyled active"> 
             
               <li><a href="/community/" class="scroll"> <i class="icon-home"></i>DashBoard</a></li>          
-              <li><a href="/farmer/videos"> <i class="fa fa-bar-chart"></i>View Videos</a></li>
+              <li><a href="/community/videos"> <i class="fa fa-bar-chart"></i>View Videos</a></li>
               <li><a href="/community/uploadfile"> <i class="fa fa-upload"></i>Upload Batch File</a></li>                             
           </ul>
         </div>

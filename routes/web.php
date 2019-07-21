@@ -12,11 +12,14 @@
 Route::get('/', function () {
     return view('login');
 });
+Route::get('/home', function () {
+    return view('login');
+});
 Route::get('/login', function(){
     return view('login');
 });
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'farmer'], function() {
     Route::get('/', function(){
         return view('farmer.pages.home');
