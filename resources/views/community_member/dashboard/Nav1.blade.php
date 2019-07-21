@@ -13,7 +13,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
           <div class="sidenav-header-inner text-center">
-          <h2 class="h5" style=" text-transform:none;">Expert</h2>
+          <h2 class="h5" style=" text-transform:none;">Community Member</h2>
           {{-- {{ Auth::user()->name }} --}}
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -24,17 +24,9 @@
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled active"> 
             
-              <li><a href="/expert" class="scroll"> <i class="icon-home"></i>DashBoard                             </a></li>
-              {{-- <li id=pk class="@if(Route::is('profile'))  active @endif"><a href="#" class="scroll"> <i class="icon-form"></i>Profile                            </a></li> --}}
-          
-              <li><a data-toggle="modal" data-target="#myModal"> <i class="fa fa-bar-chart"></i>Add Video                            </a></li>                 
-            
-            
-           
-            {{-- <li class="@if(Route::is('health')) active @endif"><a id="chart" href="#"> <i class="icon-grid"></i>Health                             </a></li> --}}
-            
-            <li><a data-toggle="modal" data-target="#advice"> <i class="icon-interface-windows"></i>Give Advice                             </a></li>
-            
+              <li><a href="/community/" class="scroll"> <i class="icon-home"></i>DashBoard</a></li>          
+              <li><a href="/farmer/videos"> <i class="fa fa-bar-chart"></i>View Videos</a></li>
+              <li><a href="/farmer/videos"> <i class="fa fa-upload"></i>Upload Batch File</a></li>                             
           </ul>
         </div>
         
