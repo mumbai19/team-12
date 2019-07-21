@@ -54,6 +54,16 @@ Route::group(['prefix'=>'community'], function() {
         $user->save();
         return redirect('community/');
     });
+
+
+    Route::get('/videos', function () {
+        $request = request();
+        if ($request->has('filter_query')) {
+            $videos = \App\Video::where('tags', 'LIKE', '%'.$request->filter_query. '%')->orWhere('language', 'LIKE', '%'.$request->filter_query.'%')->get();
+            return view('community_member.videos', ['videos' => $videos]);
+        }
+        return view('community_member.videos', ['videos' => \App\Video::all()]);
+    })->name("community_view_videos");
 });
 Route::get('/expert', 'expertsController@readData');
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
@@ -93,13 +103,13 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
          //Route::post("/fitness",'ManagerController@fitness' )->name("fit_sub");
 });
 Route::get('/vendors/intr', 'FishController@list')->name('v_intr');
-Route::get('/farmers/intr', 'FishController@flist')->name('f_intr');
+Route::get('/farmer/intr', 'FishController@flist')->name('f_intr');
 Route::get('/products/vendor', function () {
     return view('vendor1.pages.sale');});
-Route::get('/vendor/products', function () {
-    return view('farmer.pages.sale');
+Route::get('/vendors/products', function () {
+    return view('vendor1.pages.sale');
 });
-Route::post('/vendor/products', function () {
+Route::post('/vendors/products', function () {
     $request = request();
     $product = new \App\Product();
     $product->name = $request->name;
@@ -108,7 +118,7 @@ Route::post('/vendor/products', function () {
     $product->cost = $request->cost;
     $product->vendor_id = App\User::first()->id;
     $product->save();
-    return view('farmer.pages.sale');
+    return view('vendor1.pages.sale');
 });
 Route::get('/farmer/products', function() {
     return view('farmer.pages.sale');
@@ -125,7 +135,7 @@ Route::post('/farmer/products', function () {
     return view('farmer.pages.sale');
 });
 Route::group(['prefix'=>'vendors', 'middleware' => 'admin'], function() {
-    Route::get('/', 'FishController@sendAddr')->name("v_home");
+    Route::get('/', 'FishController@list')->name("v_home");
     Route::get('/intr', 'FishController@intr')->name("v_intr");
 });
 Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {
