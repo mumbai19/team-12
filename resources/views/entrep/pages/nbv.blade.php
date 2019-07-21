@@ -56,8 +56,8 @@
                      
                         <div ><span style="{float:left;color:black;}"><b>Fish Name:</b> {{$a->name1}}</span> <br>
                 <span style="{display:inline-block;color:black;}"><b>Cost:</b> Rs.{{$a->cost}}</span>  <span style="float:right;">
-                    <form action="/farmer/ntr" method="GET">
-                    <input type="hidden" name="eid" value="{{$eid}}">
+                    <form action="/entrep/intr" method="GET">
+                    <input type="hidden" name="eid" value="{{$fid}}">
                     <input type="hidden" name="fid" value="{{$a->id}}">
                     <button type="submit" class="btn btn-info">Interested</button>
                 </form>

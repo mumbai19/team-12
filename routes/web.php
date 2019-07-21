@@ -21,6 +21,7 @@ Route::group(['prefix'=>'farmer'], function() {
     Route::get('/', function(){
         return view('farmer.pages.home');
     });
+
     Route::get('/videos', function () {
         $request = request();
         if ($request->has('filter_query')) {
@@ -99,19 +100,19 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
     Route::get('/status/','ManagerController@dstatus' )->name('status');
          //Route::post("/fitness",'ManagerController@fitness' )->name("fit_sub");
 });
-Route::get('/vendor/products', function () {
-    return view('farmer.pages.sale');
+Route::get('/vendors/products', function () {
+    return view('vendor1.pages.sale');
 });
-Route::post('/vendor/products', function () {
+Route::post('/vendors/products', function () {
     $request = request();
     $product = new \App\Product();
     $product->name = $request->name;
     $product->tags = $request->tags;
     $product->text = $request->text;
     $product->cost = $request->cost;
-    $product->vendor_id = App\User::first()->id;
+    $product->vendor_id = auth()->user()->id;
     $product->save();
-    return view('farmer.pages.sale');
+    return view('vendor1.pages.sale');
 });
 Route::get('/farmer/products', function() {
     return view('farmer.pages.sale');
@@ -123,15 +124,18 @@ Route::post('/farmer/products', function () {
     $product->tags = $request->tags;
     $product->text = $request->text;
     $product->cost = $request->cost;
-    $product->farmer_id = App\User::first()->id;
+    $product->farmer_id = auth()->user()->id;
     $product->save();
     return view('farmer.pages.sale');
 });
 Route::group(['prefix'=>'vendors', 'middleware' => 'admin'], function() {
-    Route::get('/', 'FishController@sendAddr')->name("v_home");
+    Route::get('/', 'FishController@list')->name("v_home");
     Route::get('/intr', 'FishController@intr')->name("v_intr");
 });
 Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {
-    Route::get('/', 'FishController@sendAddr')->name("v_home");
-    Route::get('/intr', 'FishController@intr')->name("v_intr");
+    Route::get('/', 'FishController@elist')->name("v_home");
+    Route::get('/intr', 'FishController@entr')->name("e_intr");
 });
+
+Route::get('/vendors/intr', 'FishController@list')->name('v_intr');
+Route::get('/farmer/intr', 'FishController@flist')->name('f_intr');

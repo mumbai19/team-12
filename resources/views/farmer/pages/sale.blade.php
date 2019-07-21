@@ -38,7 +38,6 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Striped table with hover effect</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -54,7 +53,7 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach(\App\User::first()->farmer_products as $key=>$value)
+                                @foreach(auth()->user()->farmer_products as $key=>$value)
                                     <tr>
                                         <th scope="row">{{$loop->index + 1 }}</th>
                                         <td>{{ $value->fishname }}</td>
