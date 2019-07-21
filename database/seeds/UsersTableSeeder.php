@@ -106,21 +106,21 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('farmer_products')->insert([
-            'farmer_id' => 3,
+            'farmer_id' => 1,
             'fishname' => 'Carp',
             'text' => 'Lorem Ipsum',
             'tags' => 'fish, carp, common',
             'cost' => '100'
         ]);
         DB::table('farmer_products')->insert([
-            'farmer_id' => 3,
+            'farmer_id' => 1,
             'fishname' => 'Guppy',
             'text' => 'Lorem Ipsum',
             'tags' => 'guppy, fish',
             'cost' => '50'
         ]);
         DB::table('farmer_products')->insert([
-            'farmer_id' => 3,
+            'farmer_id' => 1,
             'fishname' => 'Goldfish',
             'text' => 'Lorem Ipsum',
             'tags' => 'fish, gold, goldfish',
