@@ -47,7 +47,7 @@
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
-                  <div class="brand-text d-none d-md-inline-block"><strong class="text-light" style=" text-transform:none;">Code For Good</strong></div></a></div>
+                  <div class="brand-text d-none d-md-inline-block"><strong class="text-light" style=" text-transform:none;">Jaljivika</strong></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                
                 <!-- Log out-->

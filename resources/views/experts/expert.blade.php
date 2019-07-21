@@ -101,10 +101,12 @@ var chartData = [
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
             </script>
 </div>
-<div id="container" style=" height: 500px;"></div>
+<div  class="container">
+        <div  class="row col-12" id="container" style=" height: 500px;"></div>
+</div>
 <div class="row" style="margin-bottom:20px">
         <div class="col-12">
-        <div class="card card-primary card-outline">
+        <div class="card card-primary card-{{--  --}}outline">
                 <div class="card-header">
                 <h3 class="card-title">Search</h3>
 
@@ -126,25 +128,20 @@ var chartData = [
         <p> Your Uploaded Videos </p>
         </div>
         @foreach ($videos as $video)
-    <div class="col-4">
-    <iframe height="200" src='{{ $video->url }}'>
+    <div class="col-lg-4 col-sm-12">
+    <iframe height="200" width="100%" src='{{ $video->url }}'>
             </iframe>
     </div>
         @endforeach
-    <div class="col-4">
-            <iframe height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-            </iframe>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-                <iframe height="200" width="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                </iframe>
-            </div>
+        @if(count($videos) == 0)
+        <div class="jumbotron"> <h4>NO Videos to show</h4></div>
+        @endif
 </div>
 <div class="row col-12">
         <div class="card col-12" style="height:50px;">
          <div class="card-body" style="padding-top: 15px;">
                  <div class="row">
-                         <div class="col-4">
+                         <div class="col-lg-4 col-sm-12">
                                  Name
                          </div>
                          <div class="col-4">

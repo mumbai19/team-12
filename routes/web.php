@@ -54,8 +54,21 @@ Route::group(['prefix'=>'community'], function() {
         $user->save();
         return redirect('community/');
     });
+<<<<<<< HEAD
     Route::get('/uploadfile','UploadFileController@index');
     Route::post('/uploadfile','UploadFileController@showUploadFile');   
+=======
+
+
+    Route::get('/videos', function () {
+        $request = request();
+        if ($request->has('filter_query')) {
+            $videos = \App\Video::where('tags', 'LIKE', '%'.$request->filter_query. '%')->orWhere('language', 'LIKE', '%'.$request->filter_query.'%')->get();
+            return view('community_member.videos', ['videos' => $videos]);
+        }
+        return view('community_member.videos', ['videos' => \App\Video::all()]);
+    })->name("community_view_videos");
+>>>>>>> e5e1df20de532f12fb449be8d30011bdc56b81ff
 });
 Route::get('/expert', 'expertsController@readData');
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
@@ -100,6 +113,14 @@ Route::get('/products/vendor', function () {
     return view('vendor1.pages.sale');});
 Route::get('/vendor/products', function () {
     return view('farmer.pages.sale');
+});
+
+Route::get('/farmer/form', function () {
+    return view('farmer.pages.sale');
+});
+
+Route::get('/farmer/aform', function () {
+    return view('farmer.pages.fillform');
 });
 Route::post('/vendor/products', function () {
     $request = request();

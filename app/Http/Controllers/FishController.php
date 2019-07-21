@@ -25,6 +25,7 @@ class FishController extends Controller
         $pp=$pin['0']["pincode"];
         $res=json_decode(json_encode($sub),true) ;
         $map=array();
+        $res11=[];
         foreach($res as $r1=>$val){
             $res11[]=$val["vendor_id"];
         }
