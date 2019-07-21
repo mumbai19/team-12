@@ -13,8 +13,8 @@ class expertsController extends Controller
      */
 
     public function readData(){
-        $videos= DB::select('select * from videos where expert_id=3');
-    
+        $videos= DB::select('select * from videos where expert_id=4');
+        
         return view('experts.expert')->with('videos',$videos);
     }
 
@@ -22,7 +22,7 @@ class expertsController extends Controller
         $advice = $request->input('message');
         $type = $request->input('type');
         DB::table('personalised_advice')->insert(
-            ['expert_id' => 3, 'farmer_id' => 1, 'data' => $advice, 'comment' => $type]
+            ['expert_id' => 4, 'farmer_id' => 5, 'data' => $advice, 'comment' => $type]
         );
     
         return 1;
@@ -34,7 +34,7 @@ class expertsController extends Controller
         $language = $request->input('language');
 
         DB::table('videos')->insert(
-            ['url' => $url, 'tags' => $tags, 'language' => $language, 'expert_id' => 3]
+            ['url' => $url, 'tags' => $tags, 'language' => $language, 'expert_id' => 4]
         );
 	
         return 1;

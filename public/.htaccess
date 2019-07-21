@@ -2,7 +2,6 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
     RewriteEngine On
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -18,3 +17,4 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
