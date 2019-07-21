@@ -20,7 +20,7 @@
     <!-- Custom Scrollbar-->
     <link rel="stylesheet" href="{{Url::to('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')}}">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="{{Url::to('css/style.violet.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{Url::to('css/style.green.css')}}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{ URL::to('css/custom.css')}}">
     <!-- Favicon-->

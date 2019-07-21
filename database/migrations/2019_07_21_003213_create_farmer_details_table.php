@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonalisedAdviceTable extends Migration
+class CreateFarmerDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreatePersonalisedAdviceTable extends Migration
      */
     public function up()
     {
-        Schema::create('personalised_advice', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('expert_id')->unsigned();
-            $table->foreign('expert_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+        Schema::create('farmer_details', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('farmer_id')->unsigned();
             $table->foreign('farmer_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
-            $table->string('data');
-
-            $table->string('comment')->nullable();
-
+            $table->string('ph')->nullable();
+            $table->string('o2')->nullable();
+            $table->string('area')->nullable();
+            $table->string('depth')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +32,6 @@ class CreatePersonalisedAdviceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personalised_advice');
+        Schema::dropIfExists('farmer_details');
     }
 }

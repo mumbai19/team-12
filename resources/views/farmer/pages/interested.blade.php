@@ -1,7 +1,7 @@
-@extends('vendor1.dashboard.Nav1')
+@extends('farmer.dashboard.Nav1')
 
 @section('content')
-<h1>Interested Farmers</h1><hr>
+<h1>Interested Entrepreneurs</h1><hr>
     
     <div id="accordion" class="list-group">
         @foreach ($asc as $a)

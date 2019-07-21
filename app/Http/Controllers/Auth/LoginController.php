@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -56,6 +56,15 @@ class LoginController extends Controller
             case 5:
                 $this->redirectTo = '/community';
                 break;
+        }
+
+        if ($user->is_verified != 1) {
+            return "Please verify the user
+                <script>setTimeout(function () {
+                    window.location.href = '/logout';
+                }, 1000)</script>
+            ";
+//            return response()->redirectTo('/logout');
         }
     }
 }
