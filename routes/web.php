@@ -49,6 +49,19 @@ Route::group(['prefix'=>'community'], function() {
         $user->save();
         return redirect('community/');
     });
+
+    Route::get('/uploadfile','UploadFileController@index');
+    Route::post('/uploadfile','UploadFileController@showUploadFile');   
+
+    Route::get('/videos', function () {
+        $request = request();
+        if ($request->has('filter_query')) {
+            $videos = \App\Video::where('tags', 'LIKE', '%'.$request->filter_query. '%')->orWhere('language', 'LIKE', '%'.$request->filter_query.'%')->get();
+            return view('community_member.videos', ['videos' => $videos]);
+        }
+        return view('community_member.videos', ['videos' => \App\Video::all()]);
+    })->name("community_view_videos");
+
 });
 Route::get('/expert', 'expertsController@readData');
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');

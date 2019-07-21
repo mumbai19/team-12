@@ -10,35 +10,25 @@
     <body>
     <!-- Side Navbar -->
     <nav class="side-navbar">
-        <div class="side-navbar-wrapper">
-            <!-- Sidebar Header    -->
-            <div class="sidenav-header d-flex align-items-center justify-content-center">
-                <!-- User Info-->
-                <div class="sidenav-header-inner text-center">
-                    <h2 class="h5" style=" text-transform:none;">{{ Auth::user()->name }}</h2>
-                    {{-- {{ Auth::user()->name }} --}}
-                </div>
-                <!-- Small Brand information, appears on minimized sidebar-->
-                <div class="sidenav-header-logo jersey"><a href="#" class="brand-small text-center"><b>{{ Auth::user()->name[0] }}</b></a></div>
-            </div>
-            <!-- Sidebar Navigation Menus-->
-            <div class="main-menu">
-                <h5 class="sidenav-heading">Main</h5>
-                <ul id="side-main-menu" class="side-menu list-unstyled active">
-
-
-                    <li><a href="/community/" class="scroll"> <i class="icon-home"></i>DashBoard</a></li>
-                    <li><a href="/community/videos"> <i class="fa fa-bar-chart"></i>View Videos</a></li>
-                    <li><a href="#"> <i class="fa fa-upload"></i>Upload Batch File</a></li>
-
-
-                    {{-- <li class="@if(Route::is('health')) active @endif"><a id="chart" href="#"> <i class="icon-grid"></i>Health                             </a></li> --}}
-
-
-
-                </ul>
-            </div>
-
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center">
+          <h2 class="h5" style=" text-transform:none;">Community Member</h2>
+          </div>
+          <!-- Small Brand information, appears on minimized sidebar-->
+        <div class="sidenav-header-logo jersey"><a href="#" class="brand-small text-center"><b>E</b></a></div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          <h5 class="sidenav-heading">Main</h5>
+          <ul id="side-main-menu" class="side-menu list-unstyled active"> 
+            
+              <li><a href="/community/" class="scroll"> <i class="icon-home"></i>DashBoard</a></li>          
+              <li><a href="/farmer/videos"> <i class="fa fa-bar-chart"></i>View Videos</a></li>
+              <li><a href="/community/uploadfile"> <i class="fa fa-upload"></i>Upload Batch File</a></li>                             
+          </ul>
         </div>
     </nav>
     <div class="page">

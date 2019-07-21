@@ -46,13 +46,21 @@
                         @case('1')
                             Farmer
                             @break
-
+                        @case('2')
+                            Expert
+                            @break
+                        @case('3')
+                            Entrepreneur
+                            @break
                         @case('4')
                             Vendor
                             @break
+                        @case('5')
+                            Community Member
+                            @break
 
                         @default
-                            Default
+                            Not Defined
                             
                     @endswitch</td>
                     <td><button onclick="window.location='/community/verify/'+{{ $user->id }}" type="button" class="btn btn-success">Verify</button></td>
