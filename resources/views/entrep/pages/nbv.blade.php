@@ -54,7 +54,7 @@
                 <div id="co{{$a->id}}" class="collapse" aria-labelledby="he{{$a->id}}" data-parent="#accordion">
                   <div class="card-body card-b">
                      
-                        <div ><span style="{float:left;color:black;}"><b>Product Name:</b> {{$a->name1}}</span> <br>
+                        <div ><span style="{float:left;color:black;}"><b>Fish Name:</b> {{$a->name1}}</span> <br>
                 <span style="{display:inline-block;color:black;}"><b>Cost:</b> Rs.{{$a->cost}}</span>  <span style="float:right;">
                     <form action="/farmer/ntr" method="GET">
                     <input type="hidden" name="eid" value="{{$eid}}">

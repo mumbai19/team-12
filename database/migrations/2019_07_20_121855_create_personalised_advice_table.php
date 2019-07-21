@@ -19,7 +19,12 @@ class CreatePersonalisedAdviceTable extends Migration
             $table->foreign('expert_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('farmer_id')->unsigned();
             $table->foreign('farmer_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('data');
+
+            $table->string('ph')->nullable();
+            $table->string('o2')->nullable();
+            $table->string('area')->nullable();
+            $table->string('depth')->nullable();
+
             $table->string('comment')->nullable();
 
             $table->timestamps();
