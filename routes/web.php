@@ -103,6 +103,10 @@ Route::get('/vendor/products', function () {
 Route::get('/farmer/form', function () {
     return view('farmer.pages.sale');
 });
+
+Route::get('/farmer/aform', function () {
+    return view('farmer.pages.fillform');
+});
 Route::post('/vendor/products', function () {
     $request = request();
     $product = new \App\Product();
