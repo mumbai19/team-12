@@ -10,7 +10,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 Route::get('/login', function(){
     return view('login');
@@ -141,3 +141,4 @@ Route::get('/vendors/intr', 'FishController@list')->name('v_intr');
 Route::get('/farmer/intr', 'FishController@flist')->name('f_intr');
 
 Route::get('/farmer/nbv', 'FishController@sendAddr')->name('f_nbv');
+Route::get('/farmer/ntr', 'FishController@intr');

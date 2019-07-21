@@ -1,6 +1,6 @@
 @extends('farmer.dashboard.Nav1')
 @section('content')
-@if(request()->route()->uri() == "products/farmer")
+@if(request()->route()->uri() == "farmer/products")
 
     <section class="content">
         <div class="row">

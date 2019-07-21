@@ -62,7 +62,7 @@ class LoginController extends Controller
             return "Please verify the user
                 <script>setTimeout(function () {
                     window.location.href = '/logout';
-                }, 1000)</script>
+                }, 10000)</script>
             ";
 //            return response()->redirectTo('/logout');
         }

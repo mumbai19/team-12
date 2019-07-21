@@ -13,7 +13,7 @@ class expertsController extends Controller
      */
 
     public function readData(){
-        $id = Auth::user()->id;
+        $id = auth()->user()->id;
         $videos= DB::select('select * from videos where expert_id='.$id);
         
         return view('experts.expert')->with('videos',$videos);
@@ -22,7 +22,7 @@ class expertsController extends Controller
     public function givePersonalisedAdvice(Request $request){
         $advice = $request->input('message');
         $type = $request->input('type');
-        $id = Auth::user()->id;
+        $id = auth()->user()->id;
         DB::table('personalised_advice')->insert(
             ['expert_id' => $id, 'farmer_id' => 1, 'data' => $advice, 'comment' => $type]
         );
@@ -34,7 +34,7 @@ class expertsController extends Controller
         $url = $request->input('url');
         $tags = $request->input('type');
         $language = $request->input('language');
-        $id = Auth::user()->id;
+        $id = auth()->user()->id;
         DB::table('videos')->insert(
             ['url' => $url, 'tags' => $tags, 'language' => $language, 'expert_id' => $id]
         );
