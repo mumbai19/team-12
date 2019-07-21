@@ -16,10 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', function(){
-    return view('login');
+    return view('login')->name('login');
 });
 
-
+Route::post('/auth', 'authController@auth');
 
 Auth::routes();
 
@@ -29,7 +29,7 @@ Route::group(['prefix'=>'farmer'], function() {
 
     Route::get('/', function(){
         return view('farmer.pages.home');
-    });
+    })->name('farmer');
 
     Route::get('/videos', function () {
 
@@ -47,7 +47,7 @@ Route::group(['prefix'=>'farmer'], function() {
 
 } );
 
-Route::get('/expert', 'expertsController@readData');
+Route::get('/expert', 'expertsController@readData')->name('expert');
 
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
 Route::get('/uploadVideo', 'expertsController@addVideos');
@@ -55,9 +55,9 @@ Route::get('/addAdvice', 'expertsController@addAdvice');
 
 
 
-Route::get('/login', function(){
-    return view('login');
-});
+// Route::get('/login', function(){
+//     return view('login');
+// });
 
 Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
 

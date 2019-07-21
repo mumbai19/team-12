@@ -1,7 +1,6 @@
 @extends('experts.dashboard.Nav1')
 
 @section('content')
-<script src="https://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js"></script>
   <!-- Essential JS UI widget -->
   <script src="https://cdn.syncfusion.com/17.2.0.28/js/web/ej.web.all.min.js"></script>
 <script>
@@ -155,7 +154,7 @@ var chartData = [
                                 <button class="btn btn-contact" style="    margin-top: -10px;
                                 border-radius: 10%;
                                 background: #8edede;
-                                color: #252323;" data-toggle="modal" data-target="#personalizedAdvice">View Detail</button>
+                                color: #252323;" data-toggle="modal" data-target="#personalizedAdvice">Give Advice</button>
                         </div>
                  </div>
          </div>
