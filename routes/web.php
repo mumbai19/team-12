@@ -54,10 +54,8 @@ Route::group(['prefix'=>'community'], function() {
         $user->save();
         return redirect('community/');
     });
-<<<<<<< HEAD
     Route::get('/uploadfile','UploadFileController@index');
     Route::post('/uploadfile','UploadFileController@showUploadFile');   
-=======
 
 
     Route::get('/videos', function () {
@@ -68,7 +66,6 @@ Route::group(['prefix'=>'community'], function() {
         }
         return view('community_member.videos', ['videos' => \App\Video::all()]);
     })->name("community_view_videos");
->>>>>>> e5e1df20de532f12fb449be8d30011bdc56b81ff
 });
 Route::get('/expert', 'expertsController@readData');
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
