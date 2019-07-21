@@ -14,7 +14,6 @@
           <!-- User Info-->
           <div class="sidenav-header-inner text-center">
           <h2 class="h5" style=" text-transform:none;">Community Member</h2>
-          {{-- {{ Auth::user()->name }} --}}
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
         <div class="sidenav-header-logo jersey"><a href="#" class="brand-small text-center"><b>E</b></a></div>
@@ -26,7 +25,7 @@
             
               <li><a href="/community/" class="scroll"> <i class="icon-home"></i>DashBoard</a></li>          
               <li><a href="/farmer/videos"> <i class="fa fa-bar-chart"></i>View Videos</a></li>
-              <li><a href="/farmer/videos"> <i class="fa fa-upload"></i>Upload Batch File</a></li>                             
+              <li><a href="/community/uploadfile"> <i class="fa fa-upload"></i>Upload Batch File</a></li>                             
           </ul>
         </div>
         

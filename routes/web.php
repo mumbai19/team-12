@@ -54,6 +54,8 @@ Route::group(['prefix'=>'community'], function() {
         $user->save();
         return redirect('community/');
     });
+    Route::get('/uploadfile','UploadFileController@index');
+    Route::post('/uploadfile','UploadFileController@showUploadFile');   
 });
 Route::get('/expert', 'expertsController@readData');
 Route::get('/givePersonalizedAdvice', 'expertsController@givePersonalisedAdvice');
