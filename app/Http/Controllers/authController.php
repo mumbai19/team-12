@@ -21,7 +21,9 @@ class authController extends Controller
         return redirect()->route('login');
     }else{
         if($data->role == 'FARMER'){
-        return redirect()->route('expert');
+        return redirect()->route('farmer');
+        }elseif($data->role == 'EXPERT'){
+
         }
 
     }
