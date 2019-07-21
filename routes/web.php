@@ -103,13 +103,13 @@ Route::group(['prefix'=>'user', 'middleware' => 'admin'], function() {
          //Route::post("/fitness",'ManagerController@fitness' )->name("fit_sub");
 });
 Route::get('/vendors/intr', 'FishController@list')->name('v_intr');
-Route::get('/farmer/intr', 'FishController@flist')->name('f_intr');
+Route::get('/farmers/intr', 'FishController@flist')->name('f_intr');
 Route::get('/products/vendor', function () {
     return view('vendor1.pages.sale');});
-Route::get('/vendors/products', function () {
-    return view('vendor1.pages.sale');
+Route::get('/vendor/products', function () {
+    return view('farmer.pages.sale');
 });
-Route::post('/vendors/products', function () {
+Route::post('/vendor/products', function () {
     $request = request();
     $product = new \App\Product();
     $product->name = $request->name;
@@ -118,7 +118,7 @@ Route::post('/vendors/products', function () {
     $product->cost = $request->cost;
     $product->vendor_id = App\User::first()->id;
     $product->save();
-    return view('vendor1.pages.sale');
+    return view('farmer.pages.sale');
 });
 Route::get('/farmer/products', function() {
     return view('farmer.pages.sale');
@@ -135,7 +135,7 @@ Route::post('/farmer/products', function () {
     return view('farmer.pages.sale');
 });
 Route::group(['prefix'=>'vendors', 'middleware' => 'admin'], function() {
-    Route::get('/', 'FishController@list')->name("v_home");
+    Route::get('/', 'FishController@sendAddr')->name("v_home");
     Route::get('/intr', 'FishController@intr')->name("v_intr");
 });
 Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {

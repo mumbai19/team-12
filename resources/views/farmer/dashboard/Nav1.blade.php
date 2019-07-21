@@ -38,6 +38,8 @@
 
                     <li><a href="/farmer/videos"  data-target="#advice"> <i class="fa fa-video-camera"></i>View Videos                             </a></li>
 
+                    <li><a href="/farmer/form"  data-target="#advice"> <i class="fa fa-form"></i>Fill Form</a></li>
+
                 </ul>
             </div>
 
