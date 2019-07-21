@@ -11,7 +11,20 @@ use Illuminate\Support\Facades\Response;
 class FishController extends Controller
 {
 
-    
+
+    public function chart(Request $request)
+    {
+        $id=1; #Auth::user()->id;
+        //$pid=$request->name('pid');
+        //echo $pid;
+        $result = DB::select("SELECT id,ph,o2,created_at
+        from farmer_details
+        where id=$id
+        order By created_at");
+
+        return response()->json($result);
+
+    }
 
     function sendAddr(){
         $id=auth()->user()->id;

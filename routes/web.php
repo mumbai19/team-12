@@ -21,8 +21,35 @@ Route::get('/login', function(){
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'farmer'], function() {
+//    Route::get('/', function(){
+//        return view('farmer.pages.home');
+//    });
+    Route::get('/chart','FishController@chart')->name('chart.data');
+
+
     Route::get('/', function(){
-        return view('farmer.pages.home');
+        return view('farmer.pages.advice');
+    });
+    Route::post('/tp', function(){
+
+        print_r(1);
+        print_r(var_dump($_POST));
+        echo $_POST["ph"];
+        $ph=$_POST['ph'];
+        print_r($ph);
+        $area=$_POST['area'];
+        $depth=$_POST['depth'];
+        $o2=$_POST['o2'];
+        $id=Auth::user()->id;
+
+        DB::insert("INSERT into farmer_details(farmer_id,ph,o2,area,depth,created_at) VALUES($id,$ph,$o2,$area,$depth,now())");
+
+        return redirect()->to('/farmer/aform')->with('flash.message', 'Report Added')->with('flash.class', 'success');
+
+
+
+
+
     });
 
     Route::get('/videos', function () {
@@ -145,3 +172,7 @@ Route::get('/farmer/intr', 'FishController@flist')->name('f_intr');
 
 Route::get('/farmer/nbv', 'FishController@sendAddr')->name('f_nbv');
 Route::get('/farmer/ntr', 'FishController@intr');
+
+Route::get('/farmer/aform', function () {
+    return view('farmer.pages.fillform');
+});
