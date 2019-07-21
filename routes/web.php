@@ -139,3 +139,5 @@ Route::group(['prefix'=>'entrep', 'middleware' => 'admin'], function() {
 
 Route::get('/vendors/intr', 'FishController@list')->name('v_intr');
 Route::get('/farmer/intr', 'FishController@flist')->name('f_intr');
+
+Route::get('/farmer/nbv', 'FishController@sendAddr')->name('f_nbv');
